@@ -17,6 +17,7 @@ import TsyKoboko from "@/views/DemandeProformaView.vue";
 import DemandeProformaView from "@/views/DemandeProformaView.vue";
 import CommandesFournisseur from "@/views/CommandesFournisseur.vue";
 import EmployeeView from "@/views/EmployeeView.vue";
+import EmployeeDetailsView from "@/views/EmployeeDetailsView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -71,6 +72,12 @@ const router = createRouter({
           component: BonDeCommandeView,
         },
         {
+          path: '/employe/:idEmploye',
+          name: 'employee-details',
+          component: EmployeeDetailsView,
+          props: true
+        },
+        {
           path: "bon-de-reception",
           name: "bon-de-reception",
           component: BonDeReceptionView,
@@ -89,6 +96,11 @@ const router = createRouter({
           path: "/proformatFournisseur",
           name: "proformatFournisseur",
           component: ProformatFournisseur,
+        },
+        {
+          path: "employesListe",
+          name: "Liste Employes",
+          component: EmployeeView,
         },
         {
           path: "demande-proforma",
